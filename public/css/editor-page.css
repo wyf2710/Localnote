@@ -1,0 +1,315 @@
+.editor-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-header {
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    gap: 1rem;
+}
+
+#titleInput {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #e9ecef;
+    width: 300px;
+}
+
+.category-wrapper {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.category-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    min-width: 150px;
+    font-size: 0.9rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn i {
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background: #4a90e2;
+    color: white;
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toolbar {
+    padding: 0.5rem;
+    background: white;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.toolbar button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e9ecef;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.toolbar button:hover {
+    background: #f8f9fa;
+}
+
+.color-picker {
+    padding: 0.3rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.editor-container {
+    flex: 0.3;
+    padding: 1rem;
+}
+
+.preview-container {
+    flex: 0.7;
+    padding: 1rem;
+    border-left: 1px solid #e9ecef;
+    overflow-y: auto;
+}
+
+.outline-container {
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    width: 200px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1rem;
+    transform: translateX(calc(100% + 20px));
+    transition: transform 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.outline-container.expanded {
+    transform: translateX(0);
+}
+
+.outline-btn {
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 101;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.outline-btn i {
+    font-size: 1.2rem;
+    color: #495057;
+}
+
+.outline-btn:hover {
+    background: #f8f9fa;
+}
+
+.outline-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.outline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.outline-item {
+    padding: 0.3rem 0;
+    cursor: pointer;
+    color: #495057;
+}
+
+.outline-item:hover {
+    color: #4a90e2;
+}
+
+.outline-h1 { padding-left: 0; }
+.outline-h2 { padding-left: 1rem; }
+.outline-h3 { padding-left: 2rem; }
+.outline-h4 { padding-left: 3rem; }
+.outline-h5 { padding-left: 4rem; }
+.outline-h6 { padding-left: 5rem; }
+
+#editor {
+    width: 100%;
+    height: calc(100vh - 120px);
+    border: none;
+    resize: none;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 2rem;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+/* 对话框样式 */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dialog h3 {
+    margin-bottom: 1rem;
+}
+
+.dialog-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* 错误提示样式 */
+.error-message {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: #dc3545;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.error-message.fade-out {
+    opacity: 0;
+}
+
+/* 标题高亮效果 */
+.heading-active {
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* 目录项激活状态 */
+.outline-item.active {
+    color: #4a90e2;
+    font-weight: 500;
+} 

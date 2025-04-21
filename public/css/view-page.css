@@ -1,0 +1,57 @@
+.view-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.view-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    margin: -2rem -2rem 2rem -2rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn {
+    padding: 0.8rem 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #495057;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e9ecef;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.view-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.note-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.note-meta {
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+.view-header.scrolled {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+} 
